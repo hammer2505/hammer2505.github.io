@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ISLR,R," />
 
 
 
@@ -84,15 +84,20 @@
 
 
 
-<meta name="description" content="铁锤有很多~我是喜欢跑步的那一个">
-<meta property="og:type" content="website">
-<meta property="og:title" content="爱跑步的铁锤">
-<meta property="og:url" content="http://hammer2505.cn/archives/2016/index.html">
+<meta name="description" content="读书笔记，并不打算翻译全文，打算将书中重要的知识点结合自己的理解将其分享，并在最后附上R语言相关函数应用，作为自己最近一段时间在机器学习方面学习总结。如果理解不正确，望指正。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ISLR读书笔记(3)分类">
+<meta property="og:url" content="http://hammer2505.cn/2016/06/17/r_3/index.html">
 <meta property="og:site_name" content="爱跑步的铁锤">
-<meta property="og:description" content="铁锤有很多~我是喜欢跑步的那一个">
+<meta property="og:description" content="读书笔记，并不打算翻译全文，打算将书中重要的知识点结合自己的理解将其分享，并在最后附上R语言相关函数应用，作为自己最近一段时间在机器学习方面学习总结。如果理解不正确，望指正。">
+<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/R4_1.png">
+<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/R4_2.png">
+<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/R4_3.png">
+<meta property="og:updated_time" content="2016-06-18T03:09:42.271Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="爱跑步的铁锤">
-<meta name="twitter:description" content="铁锤有很多~我是喜欢跑步的那一个">
+<meta name="twitter:title" content="ISLR读书笔记(3)分类">
+<meta name="twitter:description" content="读书笔记，并不打算翻译全文，打算将书中重要的知识点结合自己的理解将其分享，并在最后附上R语言相关函数应用，作为自己最近一段时间在机器学习方面学习总结。如果理解不正确，望指正。">
+<meta name="twitter:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/R4_1.png">
 
 
 
@@ -113,9 +118,9 @@
 
 
 
-  <link rel="canonical" href="http://hammer2505.cn/archives/2016/"/>
+  <link rel="canonical" href="http://hammer2505.cn/2016/06/17/r_3/"/>
 
-  <title> 归档 | 爱跑步的铁锤 </title>
+  <title> ISLR读书笔记(3)分类 | 爱跑步的铁锤 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -146,7 +151,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,288 +252,195 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 7 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/06/17/r_3/" itemprop="url">
-              
-                <span itemprop="name">ISLR读书笔记(3)分类</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-17T17:07:21+08:00"
-              content="2016-06-17" >
-          06-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/06/16/r_2/" itemprop="url">
-              
-                <span itemprop="name">ISLR读书笔记(2)线性回归</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-16T15:35:45+08:00"
-              content="2016-06-16" >
-          06-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/06/13/r_1/" itemprop="url">
-              
-                <span itemprop="name">ISLR读书笔记(1)统计学习简介</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-13T20:03:31+08:00"
-              content="2016-06-13" >
-          06-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/06/08/blog-4/" itemprop="url">
-              
-                <span itemprop="name">22岁的最后一天</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-08T21:11:30+08:00"
-              content="2016-06-08" >
-          06-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/06/05/blog-3/" itemprop="url">
-              
-                <span itemprop="name">一周小结(2)</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-05T22:24:38+08:00"
-              content="2016-06-05" >
-          06-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/26/blog_2/" itemprop="url">
-              
-                <span itemprop="name">一周小结(1)</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-26T19:29:00+08:00"
-              content="2016-05-26" >
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/19/firstblog/" itemprop="url">
-              
-                <span itemprop="name">Hello</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-19T19:50:48+08:00"
-              content="2016-05-19" >
-          05-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ISLR读书笔记(3)分类
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-17T17:07:21+08:00" content="2016-06-17">
+              2016-06-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/17/r_3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/17/r_3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/17/r_3/" class="leancloud_visitors" data-flag-title="ISLR读书笔记(3)分类">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>读书笔记，并不打算翻译全文，打算将书中重要的知识点结合自己的理解将其分享，并在最后附上R语言相关函数应用，作为自己最近一段时间在机器学习方面学习总结。如果理解不正确，望指正。</p>
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>ISLR，全称为<a href="http://www-bcf.usc.edu/~gareth/ISL/" target="_blank" rel="external"><em>An Introduction to Statistical Learning with Applications in R</em></a>,算是<a href="http://statweb.stanford.edu/~tibs/ElemStatLearn/" target="_blank" rel="external"><em>the Elements of Statistical Learning</em></a>的基础版，里面公式推导并不多，主要是讲解统计学习中的一些常用方法，以及相关方法在R语言上的应用。ISLR官方并没用出习题的答案，不过已经有人做了一份，可以学习参考<a href="http://blog.princehonest.com/stat-learning/" target="_blank" rel="external">ISLR答案</a></p>
+<h2 id="第四章理解"><a href="#第四章理解" class="headerlink" title="第四章理解"></a>第四章理解</h2><p>这一章讲解了三种分类方法。</p>
+<ol>
+<li>Logistic Regression(逻辑回归)</li>
+<li>Linear Discriminant Analysis</li>
+<li>Quadratic Discriminant Analysis</li>
+</ol>
+<p>下面就逐一分析一下四种分类并进行对比。</p>
+<ol>
+<li>Logistic Regression(逻辑回归)  </li>
+</ol>
+<p>公式：<br>$$log(\frac{p(x)}{1-p(x)})=\beta_0 + \beta_1X_1+\beta_2X_2+ …$$<br>其中, $p(x)$ 为属于某异类的概率，为最后的输出， $\beta$为 Logistic Regression中的参数，一般通过最大似然的方法求出最优解。一般拟合曲线如下：</p>
+<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/R4_1.png" alt=""></p>
+<p>一般来讲，逻辑回归适合于2种问题的分类，大于2种的分类问题一般采用Discriminant Analysis(判别式分析)。</p>
+<ol>
+<li>Linear Discriminant Analysis(线性判别式)   </li>
+</ol>
+<p>事实上判别式方法就是在原有的贝叶斯理论的基础上增加了对模型分布服从正态分布的假设，在线型判别式中，假设不同变量的协方差是相同的</p>
+<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/R4_2.png" alt=""></p>
+<p>左图中椭圆就是正态分布曲线，两两相交的边界线形成了分类的边界，右图中实线是贝叶斯估计也就是实际的分界线，可以发现，线性判别式法准确度还是很好的。</p>
+<ol>
+<li>Quadratic Discriminant Analysis(二次判别式)  </li>
+</ol>
+<p>二次判别式法与线性判别式法唯一的区别就是，假设不同的变量的协方差是不同的，这造成了分界线变现在图像上是弯曲的，将自由度从 $p(p+1)/2$ 增加到了 $Kp(p+1)/2$ ，K是变量的数量。增加自由度造成的影响可以在读书笔记(1)中看到。</p>
+<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/R4_3.png" alt=""></p>
+<p>紫色的虚线代表实际的分界线，黑色的虚线代表线性判别式的分界线，绿色的实线代表二次判别式的分界线。可以看到当分界线为线性时，线性判别式法表现较好；当分界线为非线性时，则刚好相反。</p>
+<ol>
+<li>总结  </li>
+</ol>
+<p>当实际分界线为线性时，如果数据接近正态分布假设，则线性判别式法表现较好，如果数据并不接近正态分布假设，则逻辑回归法表现较好。<br>当实际分界线为非线性时，二次将拟合二次判别式，其他的更高次或者不规则情况下，KNN表现优异。</p>
+<h3 id="R语言应用"><a href="#R语言应用" class="headerlink" title="R语言应用"></a>R语言应用</h3><ol>
+<li>导入数据及准备</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; library(ISLR)</span><br><span class="line">&gt; dim(Caravan)</span><br><span class="line">[1] 5822   86</span><br><span class="line">&gt; attach(Caravan)</span><br><span class="line">&gt; summary(Purchase)</span><br><span class="line">  No  Yes</span><br><span class="line">5474  348</span><br></pre></td></tr></table></figure>
+<p>因为后面要用到KNN，需要用到距离，所以将变量进行一下归一化处理，归一化程序就一句话，后面几句是显示一下归一化效果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; standardized.X = scale(Caravan[,-86])</span><br><span class="line">&gt; var(Caravan[,1])</span><br><span class="line">[1] 165.0378</span><br><span class="line">&gt; var(Caravan[,2])</span><br><span class="line">[1] 0.1647078</span><br><span class="line">&gt; var(standardized.X[,1])</span><br><span class="line">[1] 1</span><br><span class="line">&gt; var(standardized.X[,2])</span><br><span class="line">[1] 1</span><br></pre></td></tr></table></figure>
+<p>建立测试样本和训练样本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; test = 1:1000</span><br><span class="line">&gt; train.X = standardized.X[-test,]</span><br><span class="line">&gt; test.X = standardized.X[test,]</span><br><span class="line">&gt; train.Y = Purchase[-test]</span><br><span class="line">&gt; test.Y = Purchase[test]</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Logistic Regression(逻辑回归)  </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt; glm.fit = glm(Purchase~., data=Caravan, family = binomial, subset = -test)</span><br><span class="line">Warning message:</span><br><span class="line">glm.fit: fitted probabilities numerically 0 or 1 occurred</span><br><span class="line">&gt; glm.probs = predict(glm.fit, Caravan[test, ], type=&quot;response&quot;)</span><br><span class="line">&gt; glm.pred = rep(&quot;No&quot;, 1000)</span><br><span class="line">&gt; glm.pred[glm.probs&gt;.5]=&quot;Yes&quot;</span><br><span class="line">&gt; table(glm.pred, test.Y)</span><br><span class="line">        test.Y</span><br><span class="line">glm.pred  No Yes</span><br><span class="line">     No  934  59</span><br><span class="line">     Yes   7   0</span><br><span class="line">&gt; mean(glm.pred == test.Y)</span><br><span class="line">[1] 0.934</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Linear Discriminant Analysis(线性判别式)</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; library(MASS)</span><br><span class="line">&gt; lda.fit = lda(Purchase~.,data = Caravan, subset = -test)</span><br><span class="line">&gt; lda.pred = predict(lda.fit, Caravan[test,])</span><br><span class="line">&gt; lda.class = lda.pred$class</span><br><span class="line">&gt; table(lda.class, test.Y)</span><br><span class="line">         test.Y</span><br><span class="line">lda.class  No Yes</span><br><span class="line">      No  933  55</span><br><span class="line">      Yes   8   4</span><br><span class="line">&gt; mean(lda.class==test.Y)</span><br><span class="line">[1] 0.937</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Quadratic Discriminant Analysis(二次判别式)</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; qda.fit = qda(Purchase~.,data = Caravan, subset = -test)</span><br><span class="line">Error in qda.default(x, grouping, ...) : rank deficiency in group Yes</span><br><span class="line">&gt; qda.fit = qda(Purchase~ABYSTAND+AINBOED,data = Caravan, subset = -test)</span><br></pre></td></tr></table></figure>
+<p>发现直接训练会发生错误。。。尝试两个变量成功了，感觉是维度太高，目前没有发现解决办法，其他的应用与LDA相似</p>
+<ol>
+<li>KNN    </li>
+</ol>
+<p>参数k是可以自己选择的，应注意knn函数变量的输入顺序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; library(class)</span><br><span class="line">&gt; knn.pred = knn(train.X, test.X, train.Y,k=1)</span><br><span class="line">&gt; mean(test.Y==knn.pred)</span><br><span class="line">[1] 0.882</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ISLR/" rel="tag">#ISLR</a>
+          
+            <a href="/tags/R/" rel="tag">#R</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/16/r_2/" rel="next" title="ISLR读书笔记(2)线性回归">
+                <i class="fa fa-chevron-left"></i> ISLR读书笔记(2)线性回归
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -536,6 +448,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/17/r_3/"
+           data-title="ISLR读书笔记(3)分类" data-url="http://hammer2505.cn/2016/06/17/r_3/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -555,8 +475,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://7xu9qk.com1.z0.glb.clouddn.com/blog13234726.jpg"
@@ -599,6 +528,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四章理解"><span class="nav-number">2.</span> <span class="nav-text">第四章理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#R语言应用"><span class="nav-number">2.1.</span> <span class="nav-text">R语言应用</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -702,11 +642,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
