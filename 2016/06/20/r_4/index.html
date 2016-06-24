@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ISLR,R,python," />
+  <meta name="keywords" content="ISLR,R," />
 
 
 
@@ -86,19 +86,19 @@
 
 <meta name="description" content="读书笔记，并不打算翻译全文，打算将书中重要的知识点结合自己的理解将其分享，并在最后附上R语言相关函数应用，作为自己最近一段时间在机器学习方面学习总结。如果理解不正确，望指正。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ISLR读书笔记(2)线性回归">
-<meta property="og:url" content="http://hammer2505.cn/2016/06/16/r-2/index.html">
+<meta property="og:title" content="ISLR读书笔记(4)重采样方法">
+<meta property="og:url" content="http://hammer2505.cn/2016/06/20/r_4/index.html">
 <meta property="og:site_name" content="爱跑步的铁锤">
 <meta property="og:description" content="读书笔记，并不打算翻译全文，打算将书中重要的知识点结合自己的理解将其分享，并在最后附上R语言相关函数应用，作为自己最近一段时间在机器学习方面学习总结。如果理解不正确，望指正。">
-<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/r3_1.png">
-<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/r_3_2.png">
-<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/R3_3.png">
-<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/R3_4.png">
-<meta property="og:updated_time" content="2016-06-16T11:51:54.191Z">
+<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/R5_1.png">
+<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/R5_2.png">
+<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/R5_3.png">
+<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/R5_4.png">
+<meta property="og:updated_time" content="2016-06-24T08:35:18.649Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ISLR读书笔记(2)线性回归">
+<meta name="twitter:title" content="ISLR读书笔记(4)重采样方法">
 <meta name="twitter:description" content="读书笔记，并不打算翻译全文，打算将书中重要的知识点结合自己的理解将其分享，并在最后附上R语言相关函数应用，作为自己最近一段时间在机器学习方面学习总结。如果理解不正确，望指正。">
-<meta name="twitter:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/r3_1.png">
+<meta name="twitter:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/R5_1.png">
 
 
 
@@ -119,9 +119,9 @@
 
 
 
-  <link rel="canonical" href="http://hammer2505.cn/2016/06/16/r-2/"/>
+  <link rel="canonical" href="http://hammer2505.cn/2016/06/20/r_4/"/>
 
-  <title> ISLR读书笔记(2)线性回归 | 爱跑步的铁锤 </title>
+  <title> ISLR读书笔记(4)重采样方法 | 爱跑步的铁锤 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +274,7 @@
             
             
               
-                ISLR读书笔记(2)线性回归
+                ISLR读书笔记(4)重采样方法
               
             
           </h1>
@@ -286,8 +286,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-16T15:35:45+08:00" content="2016-06-16">
-              2016-06-16
+            <time itemprop="dateCreated" datetime="2016-06-20T17:31:16+08:00" content="2016-06-20">
+              2016-06-20
             </time>
           </span>
 
@@ -297,8 +297,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/16/r-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/16/r-2/" itemprop="commentsCount"></span>
+                <a href="/2016/06/20/r_4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/20/r_4/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -308,7 +308,7 @@
 
           
           
-             <span id="/2016/06/16/r-2/" class="leancloud_visitors" data-flag-title="ISLR读书笔记(2)线性回归">
+             <span id="/2016/06/20/r_4/" class="leancloud_visitors" data-flag-title="ISLR读书笔记(4)重采样方法">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -333,54 +333,24 @@
         <p>读书笔记，并不打算翻译全文，打算将书中重要的知识点结合自己的理解将其分享，并在最后附上R语言相关函数应用，作为自己最近一段时间在机器学习方面学习总结。如果理解不正确，望指正。</p>
 <a id="more"></a>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>ISLR，全称为<a href="http://www-bcf.usc.edu/~gareth/ISL/" target="_blank" rel="external"><em>An Introduction to Statistical Learning with Applications in R</em></a>,算是<a href="http://statweb.stanford.edu/~tibs/ElemStatLearn/" target="_blank" rel="external"><em>the Elements of Statistical Learning</em></a>的基础版，里面公式推导并不多，主要是讲解统计学习中的一些常用方法，以及相关方法在R语言上的应用。ISLR官方并没用出习题的答案，不过已经有人做了一份，可以学习参考<a href="http://blog.princehonest.com/stat-learning/" target="_blank" rel="external">ISLR答案</a></p>
-<h2 id="第三章理解"><a href="#第三章理解" class="headerlink" title="第三章理解"></a>第三章理解</h2><h3 id="几种常见的线性模型"><a href="#几种常见的线性模型" class="headerlink" title="几种常见的线性模型"></a>几种常见的线性模型</h3><p>1) 简单线性回归<br>$$ Y \approx \beta_0 + \beta_1X $$<br>2) 多元线性回归<br>$$ Y \approx \beta_0 + \beta_1X_1 +  \beta_2X_2 + …$$<br>3) 扩展线性回归<br>$$ Y \approx \beta_0 + \beta_1X_1 +  \beta_2X_2 + \beta_3X_1X_1$$<br>克服了多元线性模型 $X_1$ 与 $X_2$ 不协同作用的假设。<br>4) 多项式回归<br>$$ Y \approx \beta_0 + \beta_1X_1 +  \beta_2X_1^2 + \beta_3\log(X_1)+\beta_4\sqrt{X_1}$$<br>使线性模型能够拟合非线性关系。  </p>
-<h3 id="线性模型的评价指标"><a href="#线性模型的评价指标" class="headerlink" title="线性模型的评价指标"></a>线性模型的评价指标</h3><p>因为公式太多，而且都可以利用程序进行运算，结合书中的模型<br>$$sales = \beta_0+\beta_1\times TV+ \beta_2\times radio+\beta_3\times newspaper+ \epsilon $$<br>得到的几种参数直接进行分析，并没有列公式。</p>
-<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/r3_1.png" alt=""></p>
-<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/r_3_2.png" alt=""></p>
-<p>1) F-statistic</p>
-<p>可以评价<code>sales</code>与几个变量是否有关系。F-statistic是大于1的，相同数量的样本下F-statistic越大，越说明<code>sales</code>与几个变量越相关，至于比较小的值究竟是否相关，可以查询F-statistic表。这里，F-statistic为570，所以我们认为他们有关系。  </p>
-<p>2) RSE  </p>
-<p>全名为残留标准偏差(Residual Standard Error)，RSE越小，说明训练模型越准确。</p>
-<p>3) $R^2$</p>
-<p>$R^2$ 在0到1之间， $R^2$ 越大，越说明模型中Y与X相关</p>
-<p>4) p-value   </p>
-<p>p-value 越小，越说明该X与Y相关，这个模型中，明显newspaper变量与sales无明显的相关关系，在之后的模型优化上应该舍弃这一变量</p>
-<p>5) t-statistic</p>
-<p>t-statistic 有正负，比较时应取绝对值，绝对值大说明该变量X与Y有相关关系，这里，newspaper的t-statistic 参数为-0.18，明显newspaper变量与sales无明显的相关关系</p>
-<p>6) Std. error</p>
-<p>Std. error 是用来计算置信区间的，常用的95%的置信区间为<br>$$[coefficient-2×Std. error， coefficient+2×Std. error]$$</p>
-<p>7) studentized residuals</p>
-<p>studentized residuals是用来检测数据中的异常值的，一般某数据的studentized residuals的绝对值超过3就定性为异常值，需要进行处理如舍弃等。</p>
-<p>8) VIF</p>
-<p>VIF用来检测变量之间是否存在线性相关关系，VIF越大，越说明变量与其他变量存在线性相关关系，建议舍弃，或者与相关变量结合成为一个新的变量。</p>
-<h3 id="R语言应用"><a href="#R语言应用" class="headerlink" title="R语言应用"></a>R语言应用</h3><ol>
-<li><p>导入数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; library(MASS)</span><br><span class="line">&gt; library(ISLR)</span><br><span class="line">&gt; library(car)</span><br><span class="line">&gt; fix(Boston)</span><br><span class="line">&gt; names(Boston)</span><br><span class="line"> [1] &quot;crim&quot;    &quot;zn&quot;      &quot;indus&quot;   &quot;chas&quot;    &quot;nox&quot;     &quot;rm&quot;      &quot;age&quot;     &quot;dis&quot;     &quot;rad&quot;    </span><br><span class="line">[10] &quot;tax&quot;     &quot;ptratio&quot; &quot;black&quot;   &quot;lstat&quot;   &quot;medv&quot;   </span><br><span class="line">&gt; attach(Boston)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>简单线性回归<br>a. 基本函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&gt; lm.fit = lm(medv~lstat)</span><br><span class="line">&gt; summary(lm.fit)</span><br><span class="line"></span><br><span class="line">Call:</span><br><span class="line">lm(formula = medv ~ lstat)</span><br><span class="line"></span><br><span class="line">Residuals:</span><br><span class="line">    Min      1Q  Median      3Q     Max</span><br><span class="line">-15.168  -3.990  -1.318   2.034  24.500</span><br><span class="line"></span><br><span class="line">Coefficients:</span><br><span class="line">            Estimate Std. Error t value Pr(&gt;|t|)    </span><br><span class="line">(Intercept) 34.55384    0.56263   61.41   &lt;2e-16 ***</span><br><span class="line">lstat       -0.95005    0.03873  -24.53   &lt;2e-16 ***</span><br><span class="line">---</span><br><span class="line">Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span><br><span class="line"></span><br><span class="line">Residual standard error: 6.216 on 504 degrees of freedom</span><br><span class="line">Multiple R-squared:  0.5441,	Adjusted R-squared:  0.5432</span><br><span class="line">F-statistic: 601.6 on 1 and 504 DF,  p-value: &lt; 2.2e-16</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>b. 置信区间<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; confint(lm.fit)</span><br><span class="line">                2.5 %     97.5 %</span><br><span class="line">(Intercept) 33.448457 35.6592247</span><br><span class="line">lstat       -1.026148 -0.8739505</span><br></pre></td></tr></table></figure></p>
-<p>c. 绘图<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; plot(lstat, medv)</span><br><span class="line">&gt; abline(lm.fit,lwd=3, col=&quot;green&quot;)</span><br></pre></td></tr></table></figure></p>
-<p>lwd可以调线粗细<br><img src="http://7xu9qk.com1.z0.glb.clouddn.com/R3_3.png" alt=""></p>
-<p>d. 异常值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot( predict (lm.fit ), rstudent (lm.fit ))</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/R3_4.png" alt=""><br>可以发现有些数据超过3应为异常值</p>
+<h2 id="第五章理解"><a href="#第五章理解" class="headerlink" title="第五章理解"></a>第五章理解</h2><p>这一章讲了两种重采样方法，Cross-Validation(交叉验证)和Bootstrap(自展法)。这两种方法都很好理解，不过应用非常广，所以才单拿出一章进行讲解。</p>
+<h3 id="Cross-Validation"><a href="#Cross-Validation" class="headerlink" title="Cross-Validation"></a>Cross-Validation</h3><p>Cross-Validation其实就是为了避免过拟合问题的出现，将用来训练的数据分割成了训练集和测试集。下面就是三种方法的图例，蓝色代表训练集，橘黄色代表测试集，实际上，第二种方法，就是第三种方法中k=n的特例。由经验得知，我们经常选择k=5或k=10的k-Fold Cross-Validation方法。  </p>
 <ol>
-<li>多元线性回归<br>a. 基本函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; lm.fit1 = lm(medv~lstat+age)#第一种</span><br><span class="line">&gt; lm.fit2 = lm(medv~., data = Boston)#第二种</span><br><span class="line">&gt; lm.fit3 = lm(medv~.-age, data = Boston)#第三种</span><br></pre></td></tr></table></figure>
-</li>
+<li><em>The Validation Set Approach</em></li>
 </ol>
-<p>b. 求vif，其他函数与上面命令相同<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; vif (lm.fit3 )</span><br><span class="line">    crim       zn    indus     chas      nox       rm      dis      rad      tax  ptratio    black</span><br><span class="line">1.792172 2.265290 3.991592 1.071227 4.084846 1.851068 3.620246 7.441492 9.000474 1.788084 1.343044</span><br><span class="line">   lstat</span><br><span class="line">2.599229</span><br></pre></td></tr></table></figure></p>
-<p>说明自变量之间不线性相关。</p>
+<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/R5_1.png" alt=""></p>
 <ol>
-<li><p>扩展线性回归</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&gt; lm.fit4 = lm(medv~lstat*age)</span><br><span class="line">&gt; summary(lm.fit4)</span><br><span class="line"></span><br><span class="line">Call:</span><br><span class="line">lm(formula = medv ~ lstat * age)</span><br><span class="line"></span><br><span class="line">Residuals:</span><br><span class="line">    Min      1Q  Median      3Q     Max</span><br><span class="line">-15.806  -4.045  -1.333   2.085  27.552</span><br><span class="line"></span><br><span class="line">Coefficients:</span><br><span class="line">              Estimate Std. Error t value Pr(&gt;|t|)    </span><br><span class="line">(Intercept) 36.0885359  1.4698355  24.553  &lt; 2e-16 ***</span><br><span class="line">lstat       -1.3921168  0.1674555  -8.313 8.78e-16 ***</span><br><span class="line">age         -0.0007209  0.0198792  -0.036   0.9711    </span><br><span class="line">lstat:age    0.0041560  0.0018518   2.244   0.0252 *  </span><br><span class="line">---</span><br><span class="line">Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span><br><span class="line"></span><br><span class="line">Residual standard error: 6.149 on 502 degrees of freedom</span><br><span class="line">Multiple R-squared:  0.5557,	Adjusted R-squared:  0.5531</span><br><span class="line">F-statistic: 209.3 on 3 and 502 DF,  p-value: &lt; 2.2e-16</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>多项式回归<br>a. 二次多项式回归</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt; lm.fit2 = lm(medv~lstat+I(lstat^2))</span><br><span class="line">&gt; summary(lm.fit2)</span><br><span class="line"></span><br><span class="line">Call:</span><br><span class="line">lm(formula = medv ~ lstat + I(lstat^2))</span><br><span class="line"></span><br><span class="line">Residuals:</span><br><span class="line">     Min       1Q   Median       3Q      Max</span><br><span class="line">-15.2834  -3.8313  -0.5295   2.3095  25.4148</span><br><span class="line"></span><br><span class="line">Coefficients:</span><br><span class="line">             Estimate Std. Error t value Pr(&gt;|t|)    </span><br><span class="line">(Intercept) 42.862007   0.872084   49.15   &lt;2e-16 ***</span><br><span class="line">lstat       -2.332821   0.123803  -18.84   &lt;2e-16 ***</span><br><span class="line">I(lstat^2)   0.043547   0.003745   11.63   &lt;2e-16 ***</span><br><span class="line">---</span><br><span class="line">Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span><br><span class="line"></span><br><span class="line">Residual standard error: 5.524 on 503 degrees of freedom</span><br><span class="line">Multiple R-squared:  0.6407,	Adjusted R-squared:  0.6393</span><br><span class="line">F-statistic: 448.5 on 2 and 503 DF,  p-value: &lt; 2.2e-16</span><br></pre></td></tr></table></figure>
-</li>
+<li><em>Leave-One-Out Cross-Validation</em></li>
 </ol>
-<p>b. 高次线性回归<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&gt; lm.fit5 = lm(medv~poly(lstat, 5))</span><br><span class="line">&gt; summary(lm.fit5)</span><br><span class="line"></span><br><span class="line">Call:</span><br><span class="line">lm(formula = medv ~ poly(lstat, 5))</span><br><span class="line"></span><br><span class="line">Residuals:</span><br><span class="line">     Min       1Q   Median       3Q      Max</span><br><span class="line">-13.5433  -3.1039  -0.7052   2.0844  27.1153</span><br><span class="line"></span><br><span class="line">Coefficients:</span><br><span class="line">                 Estimate Std. Error t value Pr(&gt;|t|)    </span><br><span class="line">(Intercept)       22.5328     0.2318  97.197  &lt; 2e-16 ***</span><br><span class="line">poly(lstat, 5)1 -152.4595     5.2148 -29.236  &lt; 2e-16 ***</span><br><span class="line">poly(lstat, 5)2   64.2272     5.2148  12.316  &lt; 2e-16 ***</span><br><span class="line">poly(lstat, 5)3  -27.0511     5.2148  -5.187 3.10e-07 ***</span><br><span class="line">poly(lstat, 5)4   25.4517     5.2148   4.881 1.42e-06 ***</span><br><span class="line">poly(lstat, 5)5  -19.2524     5.2148  -3.692 0.000247 ***</span><br><span class="line">---</span><br><span class="line">Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span><br><span class="line"></span><br><span class="line">Residual standard error: 5.215 on 500 degrees of freedom</span><br><span class="line">Multiple R-squared:  0.6817,	Adjusted R-squared:  0.6785</span><br><span class="line">F-statistic: 214.2 on 5 and 500 DF,  p-value: &lt; 2.2e-16</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/R5_2.png" alt=""></p>
+<ol>
+<li><em>k-Fold Cross-Validation</em></li>
+</ol>
+<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/R5_3.png" alt=""></p>
+<h3 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h3><p>这一方法同样很简单，为了处理可供训练的数据集过小，标签获取代价过高的问题，将得到的数据集随机采样以得到更多个训练集。<br><img src="http://7xu9qk.com1.z0.glb.clouddn.com/R5_4.png" alt=""><br>例如上图讲一个训练集通过随机采样的方法形成了3个不同的训练集</p>
+<h2 id="R语言应用"><a href="#R语言应用" class="headerlink" title="R语言应用"></a>R语言应用</h2><p>Leave-One-Out Cross-Validation<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; library(ISLR)</span><br><span class="line">&gt; library(boot)</span><br><span class="line">&gt; attach(Auto)</span><br><span class="line">&gt; glm.fit = glm(mpg~horsepower)</span><br><span class="line">&gt; cv.err = cv.glm(Auto, glm.fit)</span><br><span class="line">&gt; cv.err$delta</span><br><span class="line">[1] 24.23151 24.23114</span><br></pre></td></tr></table></figure></p>
+<p>10-Fold Cross-Validation<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; cv.err = cv.glm(Auto, glm.fit,K=10)</span><br><span class="line">&gt; cv.err$delta</span><br><span class="line">[1] 24.20520 24.19133</span><br></pre></td></tr></table></figure></p>
+<p>Bootstrap不需要专门的函数，在训练的索引上稍作修改即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; glm.fit = glm(mpg~horsepower,subset=sample(392,392,replace = T))</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -406,8 +376,6 @@
           
             <a href="/tags/R/" rel="tag">#R</a>
           
-            <a href="/tags/python/" rel="tag">#python</a>
-          
         </div>
       
 
@@ -415,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/13/r-1/" rel="next" title="ISLR读书笔记(1)">
-                <i class="fa fa-chevron-left"></i> ISLR读书笔记(1)
+              <a href="/2016/06/17/r_3/" rel="next" title="ISLR读书笔记(3)分类">
+                <i class="fa fa-chevron-left"></i> ISLR读书笔记(3)分类
               </a>
             
           </div>
@@ -447,8 +415,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/16/r-2/"
-           data-title="ISLR读书笔记(2)线性回归" data-url="http://hammer2505.cn/2016/06/16/r-2/">
+      <div class="ds-thread" data-thread-key="2016/06/20/r_4/"
+           data-title="ISLR读书笔记(4)重采样方法" data-url="http://hammer2505.cn/2016/06/20/r_4/">
       </div>
     
   </div>
@@ -493,7 +461,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -503,7 +471,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -532,7 +500,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章理解"><span class="nav-number">2.</span> <span class="nav-text">第三章理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#几种常见的线性模型"><span class="nav-number">2.1.</span> <span class="nav-text">几种常见的线性模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性模型的评价指标"><span class="nav-number">2.2.</span> <span class="nav-text">线性模型的评价指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R语言应用"><span class="nav-number">2.3.</span> <span class="nav-text">R语言应用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五章理解"><span class="nav-number">2.</span> <span class="nav-text">第五章理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cross-Validation"><span class="nav-number">2.1.</span> <span class="nav-text">Cross-Validation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrap"><span class="nav-number">2.2.</span> <span class="nav-text">Bootstrap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R语言应用"><span class="nav-number">3.</span> <span class="nav-text">R语言应用</span></a></li></ol></div>
             
           </div>
         </section>
