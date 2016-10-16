@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="UDACITY," />
+  <meta name="keywords" content="caffe,faster-RCNN," />
 
 
 
@@ -84,20 +84,20 @@
 
 
 
-<meta name="description" content="本来按照计划，我应该已经开始更新分享关于An Introduction to Statistical Learning with Applications in R的心得与体会了，但是由于20日发现了UDACITY上面有机器学习的纳米学位，课程利用python做机器学习的几个小项目，刚好我的计划就是看完这本R语言的书之后学一下python的sklearn库，由于他限时1个月免费，之后就要收费了，所">
+<meta name="description" content="刚入坑,有什么错误请一定告诉我…这篇博客主要是记录如何安装 python版的faster-RCNN,因为之前已经安装过caffe了,Ubuntu16.04系统,显卡GTX1060以各种依赖,cuda8.0, cudnn, MKL, opencv3.1.0,都已经安装过了,python环境是Anaconda,之后有机会补上前面的各种坑吧.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一周小结(1)">
-<meta property="og:url" content="http://hammer2505.cn/2016/05/26/blog_2/index.html">
+<meta property="og:title" content="faster RCNN python 版安装">
+<meta property="og:url" content="http://hammer2505.cn/2016/10/16/deeplearning1/index.html">
 <meta property="og:site_name" content="爱跑步的铁锤">
-<meta property="og:description" content="本来按照计划，我应该已经开始更新分享关于An Introduction to Statistical Learning with Applications in R的心得与体会了，但是由于20日发现了UDACITY上面有机器学习的纳米学位，课程利用python做机器学习的几个小项目，刚好我的计划就是看完这本R语言的书之后学一下python的sklearn库，由于他限时1个月免费，之后就要收费了，所">
-<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/2-1.jpg">
-<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/2-2.jpg">
-<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/99060.jpg">
-<meta property="og:updated_time" content="2016-06-05T15:39:47.000Z">
+<meta property="og:description" content="刚入坑,有什么错误请一定告诉我…这篇博客主要是记录如何安装 python版的faster-RCNN,因为之前已经安装过caffe了,Ubuntu16.04系统,显卡GTX1060以各种依赖,cuda8.0, cudnn, MKL, opencv3.1.0,都已经安装过了,python环境是Anaconda,之后有机会补上前面的各种坑吧.">
+<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/1.png">
+<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/deep1/3.png">
+<meta property="og:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/deep1/2.png">
+<meta property="og:updated_time" content="2016-10-16T08:33:34.536Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一周小结(1)">
-<meta name="twitter:description" content="本来按照计划，我应该已经开始更新分享关于An Introduction to Statistical Learning with Applications in R的心得与体会了，但是由于20日发现了UDACITY上面有机器学习的纳米学位，课程利用python做机器学习的几个小项目，刚好我的计划就是看完这本R语言的书之后学一下python的sklearn库，由于他限时1个月免费，之后就要收费了，所">
-<meta name="twitter:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/2-1.jpg">
+<meta name="twitter:title" content="faster RCNN python 版安装">
+<meta name="twitter:description" content="刚入坑,有什么错误请一定告诉我…这篇博客主要是记录如何安装 python版的faster-RCNN,因为之前已经安装过caffe了,Ubuntu16.04系统,显卡GTX1060以各种依赖,cuda8.0, cudnn, MKL, opencv3.1.0,都已经安装过了,python环境是Anaconda,之后有机会补上前面的各种坑吧.">
+<meta name="twitter:image" content="http://7xu9qk.com1.z0.glb.clouddn.com/1.png">
 
 
 
@@ -118,9 +118,9 @@
 
 
 
-  <link rel="canonical" href="http://hammer2505.cn/2016/05/26/blog_2/"/>
+  <link rel="canonical" href="http://hammer2505.cn/2016/10/16/deeplearning1/"/>
 
-  <title> 一周小结(1) | 爱跑步的铁锤 </title>
+  <title> faster RCNN python 版安装 | 爱跑步的铁锤 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +273,7 @@
             
             
               
-                一周小结(1)
+                faster RCNN python 版安装
               
             
           </h1>
@@ -285,8 +285,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-26T19:29:00+08:00" content="2016-05-26">
-              2016-05-26
+            <time itemprop="dateCreated" datetime="2016-10-16T15:09:33+08:00" content="2016-10-16">
+              2016-10-16
             </time>
           </span>
 
@@ -296,8 +296,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/26/blog_2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/26/blog_2/" itemprop="commentsCount"></span>
+                <a href="/2016/10/16/deeplearning1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/16/deeplearning1/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -307,7 +307,7 @@
 
           
           
-             <span id="/2016/05/26/blog_2/" class="leancloud_visitors" data-flag-title="一周小结(1)">
+             <span id="/2016/10/16/deeplearning1/" class="leancloud_visitors" data-flag-title="faster RCNN python 版安装">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -329,13 +329,28 @@
       
 
       
-        <p>本来按照计划，我应该已经开始更新分享关于<a href="http://www-bcf.usc.edu/~gareth/ISL/" target="_blank" rel="external"><em>An Introduction to Statistical Learning with Applications in R</em></a>的心得与体会了，但是由于20日发现了<a href="https://cn.udacity.com/" target="_blank" rel="external"><em>UDACITY</em></a>上面有机器学习的纳米学位，课程利用python做机器学习的几个小项目，刚好我的计划就是看完这本R语言的书之后学一下python的sklearn库，由于他限时1个月免费，之后就要收费了，所以暂时停止更新读书心得。计划等到上完一个月的课之后，公开课的学习心得和ISLR的心得一同更新。</p>
+        <p>刚入坑,有什么错误请一定告诉我…<br>这篇博客主要是记录如何安装 <a href="https://github.com/rbgirshick/py-faster-rcnn" target="_blank" rel="external">python版的faster-RCNN</a><br>,因为之前已经安装过caffe了,<br>Ubuntu16.04系统,显卡GTX1060以各种依赖,cuda8.0, cudnn, MKL, opencv3.1.0,<br>都已经安装过了,python环境是Anaconda,之后有机会补上前面的各种坑吧.</p>
 <a id="more"></a>
-<p>目前已经完成了<em>L0：Titanic Survival Exploration</em>和<em>L1：Predicting Boston Housing Prices</em>两个项目<br>发现由于 UDACITY 才进入中国，部分没有汉化，或者翻译有些问题，不过视频讲解还是比较明白的，提交项目之后，reviwer非常耐心~</p>
-<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/2-1.jpg" alt="L1完成确认"></p>
-<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/2-2.jpg" alt="L2完成确认"></p>
-<p>TNF最后排名第29名～放一张皂片开心一下，然后继续学习去了～周末还要去怀柔跑步的说～</p>
-<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/99060.jpg" alt="崩沙卡拉卡"></p>
+<h2 id="安装python依赖包"><a href="#安装python依赖包" class="headerlink" title="安装python依赖包"></a>安装python依赖包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install Cython</span><br><span class="line">sudo pip install easydict</span><br></pre></td></tr></table></figure>
+<h2 id="下载源代码"><a href="#下载源代码" class="headerlink" title="下载源代码"></a>下载源代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone --recursive https://github.com/rbgirshick/py-faster-rcnn.git</span><br></pre></td></tr></table></figure>
+<h2 id="修改并编译Cython"><a href="#修改并编译Cython" class="headerlink" title="修改并编译Cython"></a>修改并编译Cython</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd py-faster-rcnn/lib</span><br></pre></td></tr></table></figure>
+<p>修改<code>setup.py</code>文件第135行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;nvcc&apos;: [&apos;-arch=sm_35&apos;,</span><br></pre></td></tr></table></figure></p>
+<p>根据自己的显卡计算能力进行修改,查询网址为:<a href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="external">CUDA GPUs</a>  </p>
+<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/1.png" alt=""></p>
+<p>例如我的电脑是GTX 1060, 计算能力为6.1,则修改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;nvcc&apos;: [&apos;-arch=sm_61&apos;,</span><br></pre></td></tr></table></figure></p>
+<p>保存后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure></p>
+<p>进行编译.</p>
+<h2 id="编译caffe"><a href="#编译caffe" class="headerlink" title="编译caffe"></a>编译caffe</h2><h3 id="修改Makefile-config文件"><a href="#修改Makefile-config文件" class="headerlink" title="修改Makefile.config文件"></a>修改Makefile.config文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ../caffe-faster-rcnn</span><br></pre></td></tr></table></figure>
+<p>进入caffe目录.<br>我是将自己之前的caffe的Makefile.config拷贝到了该目录下,也可以执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp Makefile.config.example Makefile.config</span><br></pre></td></tr></table></figure></p>
+<p>对<code>Makefile.config</code>文件进行修改.<br>注意修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">USE_CUDNN := 1</span><br><span class="line">WITH_PYTHON_LAYER := 1</span><br><span class="line">USE_PKG_CONFIG := 1</span><br></pre></td></tr></table></figure></p>
+<h3 id="修改cudnn加速文件"><a href="#修改cudnn加速文件" class="headerlink" title="修改cudnn加速文件"></a>修改cudnn加速文件</h3><p>这里需要注意一下,因为作者的caffe版本不支持新的cudnn加速,我们需要将<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">py-faster-rcnn/caffe-fast-rcnn/include/caffe/util/cudnn.hpp  </span><br><span class="line">py-faster-rcnn/caffe-fast-rcnn/src/caffe/util/cudnn.cpp</span><br><span class="line">py-faster-rcnn/caffe-fast-rcnn/src/caffe/layers/ 目录下16个cudnn_开头的文件</span><br><span class="line">py-faster-rcnn/caffe-fast-rcnn/include/caffe/layers/目录下8个cudnn_开头的文件</span><br></pre></td></tr></table></figure></p>
+<p>选择caffe-master版的文件进行替换,这样编译就不会出错啦.</p>
+<h3 id="修改一个include错误"><a href="#修改一个include错误" class="headerlink" title="修改一个include错误"></a>修改一个include错误</h3><p>修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">py-faster-rcnn/caffe-fast-rcnn/src/caffe/test/test_smooth_L1_loss_layer.cpp</span><br></pre></td></tr></table></figure></p>
+<p>删除第十一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;caffe/vision_layers.hpp&quot;</span><br></pre></td></tr></table></figure></p>
+<h3 id="编译caffe-1"><a href="#编译caffe-1" class="headerlink" title="编译caffe"></a>编译caffe</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># compile Caffe modules</span><br><span class="line">make -j8 all  </span><br><span class="line"></span><br><span class="line">make -j8 test  </span><br><span class="line"></span><br><span class="line"># run tests to ensure all the tests are passed</span><br><span class="line">make runtest  </span><br><span class="line"></span><br><span class="line"># build pycaffe  </span><br><span class="line">make pycaffe</span><br></pre></td></tr></table></figure>
+<h2 id="下载已经训练好的模型"><a href="#下载已经训练好的模型" class="headerlink" title="下载已经训练好的模型"></a>下载已经训练好的模型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $FRCN_ROOT</span><br><span class="line">./data/scripts/fetch_faster_rcnn_models.sh</span><br></pre></td></tr></table></figure>
+<h2 id="执行Demo"><a href="#执行Demo" class="headerlink" title="执行Demo"></a>执行Demo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $FRCN_ROOT</span><br><span class="line">./tools/demo.py</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xu9qk.com1.z0.glb.clouddn.com/deep1/3.png" alt=""><br><img src="http://7xu9qk.com1.z0.glb.clouddn.com/deep1/2.png" alt=""></p>
 
       
     </div>
@@ -357,7 +372,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/UDACITY/" rel="tag">#UDACITY</a>
+            <a href="/tags/caffe/" rel="tag">#caffe</a>
+          
+            <a href="/tags/faster-RCNN/" rel="tag">#faster-RCNN</a>
           
         </div>
       
@@ -366,17 +383,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/19/firstblog/" rel="next" title="Hello">
-                <i class="fa fa-chevron-left"></i> Hello
+              <a href="/2016/07/17/blog-5/" rel="next" title="心有所感">
+                <i class="fa fa-chevron-left"></i> 心有所感
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/05/blog-3/" rel="prev" title="一周小结(2)">
-                一周小结(2) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -402,8 +415,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/26/blog_2/"
-           data-title="一周小结(1)" data-url="http://hammer2505.cn/2016/05/26/blog_2/">
+      <div class="ds-thread" data-thread-key="2016/10/16/deeplearning1/"
+           data-title="faster RCNN python 版安装" data-url="http://hammer2505.cn/2016/10/16/deeplearning1/">
       </div>
     
   </div>
@@ -498,7 +511,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装python依赖包"><span class="nav-number">1.</span> <span class="nav-text">安装python依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载源代码"><span class="nav-number">2.</span> <span class="nav-text">下载源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改并编译Cython"><span class="nav-number">3.</span> <span class="nav-text">修改并编译Cython</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译caffe"><span class="nav-number">4.</span> <span class="nav-text">编译caffe</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改Makefile-config文件"><span class="nav-number">4.1.</span> <span class="nav-text">修改Makefile.config文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改cudnn加速文件"><span class="nav-number">4.2.</span> <span class="nav-text">修改cudnn加速文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改一个include错误"><span class="nav-number">4.3.</span> <span class="nav-text">修改一个include错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译caffe-1"><span class="nav-number">4.4.</span> <span class="nav-text">编译caffe</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载已经训练好的模型"><span class="nav-number">5.</span> <span class="nav-text">下载已经训练好的模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行Demo"><span class="nav-number">6.</span> <span class="nav-text">执行Demo</span></a></li></ol></div>
             
           </div>
         </section>
